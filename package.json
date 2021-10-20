@@ -1,0 +1,22 @@
+{
+  "name": "3fullbk_project",
+  "version": "1.0.0",
+  "description": "Projet de dématérialisation de la brochure ESTIAM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lea-hmd/3FULLBK_project.git"
+  },
+  "author": "Groupe 09",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lea-hmd/3FULLBK_project/issues"
+  },
+  "homepage": "https://github.com/lea-hmd/3FULLBK_project#readme",
+  "dependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
