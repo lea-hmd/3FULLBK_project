@@ -18,7 +18,7 @@ Tout comprendre sur l'installation et l'utilisation du projet
    ```sh
    git clone https://github.com/lea-hmd/3FULLBK_project.git
    ```
-2. Installer les dépendances du projet (en lancer la commande dans le dossier racine '3FULLBK_project')
+2. Installer les dépendances du projet (en lançant la commande dans le dossier racine '3FULLBK_project')
    ```sh
    npm i
    ```
