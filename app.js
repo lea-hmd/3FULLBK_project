@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 
-//Permet de créer les différentes routes du site
+//Route principale du site
 router.get("/", (req, res) => {
   //Permet d'afficher correctement les accents
   res.setHeader("Content-Type", "application/json; charset=utf-8");
