@@ -1,7 +1,7 @@
 //Importation des modules utilisés
 const app = require("./app");
 const http = require("http");
-const { Db } = require("mongodb");
+//const { Db } = require("mongodb"); //Pour le test de la connexion à la bdd
 require("dotenv").config();
 
 /*
@@ -11,9 +11,9 @@ db.connect();
 */
 
 //Déclaration/Forçage du port d'écoute
-let port = process.env.PORT || 5000;
-app.set("port", port);
+const PORT = process.env.PORT || 8080;
+app.set("port", PORT);
 
 //Création du serveur web
 var server = http.createServer(app);
-server.listen(port);
+server.listen(PORT);
