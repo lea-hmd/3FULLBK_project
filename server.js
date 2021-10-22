@@ -1,7 +1,7 @@
 //Importation des modules utilisés
 const app = require("./app");
 const http = require("http");
-const { Db } = require("mongodb");
+//const { Db } = require("mongodb"); //Pour le test de la connexion à la bdd
 require("dotenv").config();
 
 /*
