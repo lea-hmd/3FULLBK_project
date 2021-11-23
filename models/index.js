@@ -10,7 +10,6 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbUrl;
-db.partenaires = require('./partenaire.model.js');
-mongoose;
+db.partenaires = require('./partenaire.model.js')(mongoose);
 
 module.exports = db;
