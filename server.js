@@ -5,9 +5,10 @@ const app = express();
 require('dotenv').config();
 
 var corsOptions = {
-  origin: 'http://localhost:8080',
+  origin: 'http://localhost:5000',
 };
 
+//Prise en charge du protocole CORS
 app.use(cors(corsOptions));
 
 // Parse et 'traite' le contenu des requêtes de type application/json
@@ -15,6 +16,21 @@ app.use(express.json());
 
 // Parse et 'traite' le contenu des requêtes de type application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+//Connexion à la bdd
+const db = require('./models');
+db.mongoose
+  .connect(db.url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('Successful connection to the db !');
+  })
+  .catch((err) => {
+    console.log('Cannot connect to the db !', err);
+    process.exit();
+  });
 
 //Route principale du site
 app.get('/', (req, res) => {
