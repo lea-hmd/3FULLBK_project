@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 
 var corsOptions = {
-  origin: 'http://localhost:5000',
+  origin: 'http://localhost:3000',
 };
 
 //Prise en charge du protocole CORS
@@ -40,6 +40,9 @@ app.get('/', (req, res) => {
   res.write('Vous êtes à la racine du Projet plaquette 3FULLBK du groupe 09 !');
   res.send();
 });
+
+//Importation des routes des requêtes
+require('./routes/partenaires.routes')(app);
 
 //Création du serveur web et écoute des requêtes
 const PORT = process.env.PORT || 8080;
