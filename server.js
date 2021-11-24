@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 
 var corsOptions = {
-  origin: 'http://localhost:5000',
+  origin: 'http://localhost:3000',
 };
 
 //Prise en charge du protocole CORS
