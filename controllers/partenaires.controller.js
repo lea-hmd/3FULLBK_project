@@ -5,7 +5,7 @@ const Partenaire = db.partenaires;
 /*------------ AJOUT ------------*/
 
 //Ajout d'un nouveau partenaire
-exports.create = (req, res) => {
+exports.createOne = (req, res) => {
   //Empêche l'envoi de requêtes avec un champ vide
   if (!req.body.name || !req.body.imageUrl) {
     res.status(400).send("Cannot send an empty field !");
@@ -50,6 +50,19 @@ exports.create = (req, res) => {
       res
         .status(500)
         .send(err.message || "Error while creating a new partenaire ...");
+    });
+};
+
+//Ajout de plusieurs partenaires
+exports.createMany = (req, res) => {
+  Partenaire.insertMany(req.body.partenaires)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(err.message || "Error while creating multiple partenaires ...");
     });
 };
 

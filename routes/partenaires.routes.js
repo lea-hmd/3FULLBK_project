@@ -4,8 +4,11 @@ module.exports = (app) => {
 
   /*------------ AJOUT ------------*/
 
-  //Route de la requête de la création d'un nouveau partenaire
-  router.post("/partenaires/addOne", partenaires.create);
+  //Route de la requête de création d'un nouveau partenaire
+  router.post("/partenaires/addOne", partenaires.createOne);
+
+  //Route de la requête de création de plusieurs partenaires
+  router.post("/partenaires/addMany", partenaires.createMany);
 
   /*------------ AFFICHAGE ------------*/
 
