@@ -68,6 +68,19 @@ exports.getAll = (req, res) => {
     });
 };
 
+//Affichage de tous les campus partenaires
+exports.getCampus = (req, res) => {
+  Partenaire.find({ isCampus: true })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(err.message || "Error while finding campus partenaires ...");
+    });
+};
+
 /*------------ SUPPRESSION ------------*/
 
 //Efface tous les partenaires
