@@ -11,6 +11,9 @@ module.exports = (app) => {
   //Route de la requête de suppression d'un partenaire en fonction de son nom
   router.delete("/partenaires/deleteByName/:name", partenaires.deleteByName);
 
+  //Route de la requête de suppression d'un partenaire en fonction de son id
+  router.delete("/partenaires/deleteById/:id", partenaires.deleteById);
+
   //Route racine de l'api
   app.use("/api", router);
 };

@@ -76,7 +76,7 @@ exports.deleteByName = (req, res) => {
         res
           .status(404)
           .send(
-            `Cannot delete partenaire with name: ${name}, you must verify the name`
+            `Cannot delete partenaire with name: ${name}, you must verify the name !`
           );
       } else {
         res.send("Partenaire was successfully deleted !");
@@ -88,5 +88,28 @@ exports.deleteByName = (req, res) => {
         .send(
           "Could not delete the partenaire with the following name: " + name
         );
+    });
+};
+
+//Efface un partenaire via son id
+exports.deleteById = (req, res) => {
+  const id = req.params.id;
+
+  Partenaire.findByIdAndDelete(id)
+    .then((data) => {
+      if (!data) {
+        res
+          .status(404)
+          .send(
+            `Cannot delete partenaire with id: ${id}, you must verify the id !`
+          );
+      } else {
+        res.send("Partenaire was successfully deleted !");
+      }
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send("Could not delete the partenaire with the following id: " + id);
     });
 };
