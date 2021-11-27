@@ -8,8 +8,7 @@ Tout comprendre sur l'installation et l'utilisation du projet
 
 ### Installation
 
-
-* Il est toujours bon de mettre à jour le gestionnaire de paquet npm
+- Il est toujours bon de mettre à jour le gestionnaire de paquet npm
   ```sh
   npm i npm@latest -g
   ```
@@ -23,6 +22,7 @@ Tout comprendre sur l'installation et l'utilisation du projet
    npm i
    ```
 3. Lancer le projet
+
    ```sh
    #Utiliser nodemon pour permettre au serveur de se relancer à chaque modification
    nodemon start
@@ -30,4 +30,5 @@ Tout comprendre sur l'installation et l'utilisation du projet
    #Utiliser npm start pour lancer le serveur une seule fois
    npm start
    ```
+
 4. Visualiser le projet dans le navigateur via l'adresse http://localhost:5000

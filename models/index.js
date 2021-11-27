@@ -1,7 +1,7 @@
 //Importation des modules utilisés
-require('dotenv').config();
+require("dotenv").config();
 const dbUrl = process.env.URI;
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //Déclaration globale de mongoose
 mongoose.Promise = global.Promise;
@@ -10,6 +10,6 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbUrl;
-db.partenaires = require('./partenaire.model.js')(mongoose);
+db.partenaires = require("./partenaire.model.js")(mongoose);
 
 module.exports = db;
