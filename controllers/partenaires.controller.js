@@ -2,6 +2,8 @@
 const db = require("../models");
 const Partenaire = db.partenaires;
 
+/*------------ AJOUT ------------*/
+
 //Ajout d'un nouveau partenaire
 exports.create = (req, res) => {
   //Empêche l'envoi de requêtes avec un champ vide
@@ -50,6 +52,23 @@ exports.create = (req, res) => {
         .send(err.message || "Error while creating a new partenaire ...");
     });
 };
+
+/*------------ AFFICHAGE ------------*/
+
+//Affichage de tous les partenaires
+exports.getAll = (req, res) => {
+  Partenaire.find()
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(err.message || "Error while finding all partenaires ...");
+    });
+};
+
+/*------------ SUPPRESSION ------------*/
 
 //Efface tous les partenaires
 exports.deleteAll = (req, res) => {

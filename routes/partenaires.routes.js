@@ -2,8 +2,17 @@ module.exports = (app) => {
   const partenaires = require("../controllers/partenaires.controller");
   var router = require("express").Router();
 
+  /*------------ AJOUT ------------*/
+
   //Route de la requête de la création d'un nouveau partenaire
   router.post("/partenaires/addOne", partenaires.create);
+
+  /*------------ AFFICHAGE ------------*/
+
+  //Route de la requête d'affichage de tous les partenaires
+  router.get("/partenaires/all", partenaires.getAll);
+
+  /*------------ SUPPRESSION ------------*/
 
   //Route de la requête de suppression de tous les partenaires
   router.delete("/partenaires/deleteAll", partenaires.deleteAll);
