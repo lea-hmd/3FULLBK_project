@@ -81,6 +81,19 @@ exports.getCampus = (req, res) => {
     });
 };
 
+//Affichage de toutes les entreprises partenaires
+exports.getEntreprises = (req, res) => {
+  Partenaire.find({ isEntreprise: true })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(err.message || "Error while finding entreprises partenaires ...");
+    });
+};
+
 /*------------ SUPPRESSION ------------*/
 
 //Efface tous les partenaires

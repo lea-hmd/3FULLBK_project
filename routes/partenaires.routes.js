@@ -15,6 +15,9 @@ module.exports = (app) => {
   //Route de la requête d'affichage de tous les campus partenaires
   router.get("/partenaires/campus", partenaires.getCampus);
 
+  //Route de la requête d'affichage de toutes les entreprises partenaires
+  router.get("/partenaires/entreprises", partenaires.getEntreprises);
+
   /*------------ SUPPRESSION ------------*/
 
   //Route de la requête de suppression de tous les partenaires
