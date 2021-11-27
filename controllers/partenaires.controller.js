@@ -65,3 +65,28 @@ exports.deleteAll = (req, res) => {
         .send(err.message || "Error while deleting all partenaires ...");
     });
 };
+
+//Efface un partenaire via son nom
+exports.deleteByName = (req, res) => {
+  const name = req.params.name;
+
+  Partenaire.findOneAndDelete({ name: name })
+    .then((data) => {
+      if (!data) {
+        res
+          .status(404)
+          .send(
+            `Cannot delete partenaire with name: ${name}, you must verify the name`
+          );
+      } else {
+        res.send("Partenaire was successfully deleted !");
+      }
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(
+          "Could not delete the partenaire with the following name: " + name
+        );
+    });
+};
