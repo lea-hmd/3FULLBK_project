@@ -45,8 +45,23 @@ exports.create = (req, res) => {
       res.send(data);
     })
     .catch((err) => {
-      res.status(500).send({
-        message: err.message || "Error while creating a new partenaire ...",
-      });
+      res
+        .status(500)
+        .send(err.message || "Error while creating a new partenaire ...");
+    });
+};
+
+//Efface tous les partenaires
+exports.deleteAll = (req, res) => {
+  Partenaire.deleteMany({})
+    .then((data) => {
+      res.send(
+        `${data.deletedCount} partenaire(s) were successfully deleted !`
+      );
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(err.message || "Error while deleting all partenaires ...");
     });
 };
