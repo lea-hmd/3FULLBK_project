@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
   res.send();
 });
 
+//Affiche la route principale
 app.use("/", router);
 
 module.exports = app;
