@@ -21,6 +21,11 @@ module.exports = (app) => {
   //Route de la requête d'affichage de toutes les entreprises partenaires
   router.get("/partenaires/entreprises", partenaires.getEntreprises);
 
+  /*------------ MODIFICATION ------------*/
+
+  //Route de la requête de modification d'un partenaire via son id
+  router.put("/partenaires/updateById/:id", partenaires.updateById);
+
   /*------------ SUPPRESSION ------------*/
 
   //Route de la requête de suppression de tous les partenaires

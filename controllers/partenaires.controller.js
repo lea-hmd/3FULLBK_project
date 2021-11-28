@@ -107,6 +107,37 @@ exports.getEntreprises = (req, res) => {
     });
 };
 
+/*------------ MODIFICATION ------------*/
+
+//Modification d'un partenaire
+exports.updateById = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send("Cannot update partenaire with empty body");
+  }
+
+  const id = req.params.id;
+
+  Partenaire.findByIdAndUpdate(id, req.body)
+    .then((data) => {
+      if (!data) {
+        res
+          .status(404)
+          .send(
+            `Cannot update partenaire with id: ${id}, you must verify the id !`
+          );
+      } else res.send("Partenaire was successfully updated.");
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(
+          "Error while updating partenaire with the following id: " +
+            id +
+            ", please check if there is no identical data in the database !"
+        );
+    });
+};
+
 /*------------ SUPPRESSION ------------*/
 
 //Efface tous les partenaires
