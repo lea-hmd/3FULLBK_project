@@ -11,5 +11,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbUrl;
 db.partenaires = require("./partenaire.model.js")(mongoose);
+db.certificationsPro = require("./certificationPro.model")(mongoose);
 
 module.exports = db;
