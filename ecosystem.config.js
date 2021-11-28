@@ -9,6 +9,7 @@ module.exports = {
   deploy: {
     production: {
       user: "ubuntu",
+      key: "~/.ssh/id_rsa.pub",
       host: "141.94.220.102",
       ref: "origin/main",
       repo: "git@github.com:lea-hmd/3FULLBK_project.git",
