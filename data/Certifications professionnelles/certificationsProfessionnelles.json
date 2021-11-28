@@ -1,0 +1,196 @@
+{
+  "certificationsPro": [
+    {
+      "providerName": "Arduino",
+      "title": "Arduino fundamentals certification on Electronics and Physical Computing",
+      "description": "",
+      "imageUrl": "https://logos-download.com/wp-content/uploads/2016/09/Arduino_logo.png"
+    },
+    {
+      "providerName": "Cisco",
+      "title": "Cisco CCNA Exploration",
+      "description": "Module 1 à 4",
+      "imageUrl": "https://images.youracclaim.com/size/680x680/images/683783d8-eaac-4c37-a14d-11bd8a36321d/ccna_600.png"
+    },
+    {
+      "providerName": "Cisco",
+      "title": "Cisco CCNA Security",
+      "description": "",
+      "imageUrl": "https://www.logolynx.com/images/logolynx/78/7856b9b361fd622d39e1cebb978ec8de.jpeg"
+    },
+    {
+      "providerName": "Google",
+      "title": "Google Ads Search Certification",
+      "description": "",
+      "imageUrl": "https://adsvisers.com/wp-content/uploads/2019/01/Ads_Logo_Vertical.png"
+    },
+    {
+      "providerName": "Google",
+      "title": "Google Analytics IQ",
+      "description": "",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Google-analytics.png"
+    },
+    {
+      "providerName": "Google",
+      "title": "Google Associate Android Developer certfication",
+      "description": "",
+      "imageUrl": "https://miro.medium.com/max/512/1*m06-VJ87XEuMX4oG-yZN8A.png"
+    },
+    {
+      "providerName": "Google",
+      "title": "Google Shopping ads Certification",
+      "description": "",
+      "imageUrl": "https://adsvisers.com/wp-content/uploads/2020/04/Google-shopping.png"
+    },
+    {
+      "providerName": "ITIL Foundation",
+      "title": "ITIL 4 Certification",
+      "description": "",
+      "imageUrl": "https://www.smartgecko.info/wp-content/uploads/2019/08/certification-ITIL-geneve.jpg"
+    },
+    {
+      "providerName": "Java",
+      "title": "Java Foundations Certified Junior Associate",
+      "description": "",
+      "imageUrl": "https://logos-marques.com/wp-content/uploads/2021/03/Java-Logo.png"
+    },
+    {
+      "providerName": "Linux Professionnal Institute",
+      "title": "Linux Essentials certification",
+      "description": "",
+      "imageUrl": "https://www.oo2.fr/sites/default/files/styles/medium/public/images/certification-lpi-linux-essentials.jpg?itok=FW0-jGKg"
+    },
+    {
+      "providerName": "Linux Professionnal Institute",
+      "title": "LPIC-1 : Administrateur Linux",
+      "description": "",
+      "imageUrl": "https://www.lpi.org/sites/default/files/LPIC-1-Large.png"
+    },
+    {
+      "providerName": "Linux Professionnal Institute",
+      "title": "LPIC-2 : Ingénieur Linux",
+      "description": "",
+      "imageUrl": "https://www.guruteamirl.com/_fileupload/Image/Certification/Certification-784454601-lpic-2-lpic-2.jpg"
+    },
+    {
+      "providerName": "Linux Professionnal Institute",
+      "title": "LPIC-3 300 : Environnement mixte",
+      "description": "",
+      "imageUrl": "https://www.oo2.fr/sites/default/files/styles/medium/public/images/LPIC-3.jpg?itok=73Le-YTJ"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft Certified Professional (MCP) Programming in C#",
+      "description": "",
+      "imageUrl": "https://www.vitoshacademy.com/wp-content/uploads/2017/03/Special_ProgC_Blk-1024x645.png"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft Certified Professional Installation, stockage et calcul avec Windows Server 2016",
+      "description": "",
+      "imageUrl": "https://www.resotel.net.ma/img/formation_images/5627b4a8f9efbd8fbdadaf4177824186f8c734f3.png"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft Certified Professional Mise en réseau avec Windows Server 2016",
+      "description": "",
+      "imageUrl": "https://www.resotel.net.ma/img/formation_images/5627b4a8f9efbd8fbdadaf4177824186f8c734f3.png"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft Certified Solutions Associate (MCSA) SQL 2016 BI Development",
+      "description": "",
+      "imageUrl": "https://www.oo2.fr/sites/default/files/styles/large_16_9/public/images/certification-microsoft-mcsa.jpg?itok=EA5sgcZz"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft MCP Infra Azure",
+      "description": "",
+      "imageUrl": "https://d1wl9nui6miy8.cloudfront.net/media/966985/lrn_certification_azure-administrator-associate.png"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft MCP Office365 Administrator",
+      "description": "",
+      "imageUrl": "http://get-info.fr/wp-content/uploads/2015/12/ms_cert_professional_logo_blk_rgb.png"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft MCSA SQL Server",
+      "description": "",
+      "imageUrl": "https://www.oo2.fr/sites/default/files/styles/large_16_9/public/images/certification-windows-certification-mcsa-sql-server-admin.jpg?itok=zznW4zvx"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft MCSA Windows Server 2019",
+      "description": "",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAU3bEfyx9hLsA0tEyl4trXb7mt8B0tHXB8F_DDLrvsjM7CMKgGRU4POUPr0Ca5expH3Y&usqp=CAU"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft Technology Associate Principes de base du système d’exploitation Windows",
+      "description": "",
+      "imageUrl": "https://www.charitydigitalexchange.org/sites/default/files/images/MTA.png"
+    },
+    {
+      "providerName": "Microsoft",
+      "title": "Microsoft Technology Associate Windows Server Administration Fundamentals",
+      "description": "",
+      "imageUrl": "https://www.charitydigitalexchange.org/sites/default/files/images/MTA.png"
+    },
+    {
+      "providerName": "OpenJS Foundation",
+      "title": "OpenJS Foundation Node.js Application Developer",
+      "description": "",
+      "imageUrl": "https://training.linuxfoundation.org/wp-content/uploads/2020/10/Training_Badges_Master_Node-AppDev-300x300.png"
+    },
+    {
+      "providerName": "Oracle",
+      "title": "Oracle Certified Professional Oracle Database Administrator",
+      "description": "",
+      "imageUrl": "https://images.credly.com/images/3658454e-d747-4357-b192-6296f7192cd9/linkedin_thumb_Oracle_Professional_Badge__1_.png"
+    },
+    {
+      "providerName": "Oracle",
+      "title": "Oracle Certified Professional, MySQL 5.6 Developer Certification",
+      "description": "",
+      "imageUrl": "https://images.credly.com/images/3658454e-d747-4357-b192-6296f7192cd9/linkedin_thumb_Oracle_Professional_Badge__1_.png"
+    },
+    {
+      "providerName": "Oracle",
+      "title": "Oracle Certified Professional, MySQL Database Administrator",
+      "description": "",
+      "imageUrl": "https://images.credly.com/images/a2a7234c-00e9-4ca2-81f5-ce38e9249f99/03_MySQL_8_Database_Administrator_Professional__1_.png"
+    },
+    {
+      "providerName": "Oracle",
+      "title": "Oracle Certified Professional: Java SE 11 Developer",
+      "description": "",
+      "imageUrl": "https://brm-workforce.oracle.com/pdf/certview/images/Oracle_Java_SE_11_Developer.png"
+    },
+    {
+      "providerName": "SAS",
+      "title": "SAS® Certified Specialist Visual Business Analytics",
+      "description": "",
+      "imageUrl": "https://www.sas.com/fr_ma/_jcr_content/socialShareImage.img.5c70b32d9e8642b9b3c49b748239b21a.png"
+    },
+    {
+      "providerName": "Scrum.org",
+      "title": "Scrum.org Professional Scrum Master",
+      "description": "",
+      "imageUrl": "https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2019-02/1PSM%20Logo.png"
+    },
+    {
+      "providerName": "ETS",
+      "title": "TOEIC - Test of English for International Communication",
+      "description": "",
+      "imageUrl": "https://www.exploralangues.fr/wp-content/uploads/2018/05/tout-savoir-sur-test-anglais-toeic-listening-reading.jpg"
+    },
+    {
+      "providerName": "Zend",
+      "title": "Zend Certified PHP Engineer",
+      "description": "",
+      "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Folivier.lonzi.fr%2Freferences%2Fzend-certified-php-engineer%2F&psig=AOvVaw38tlaDfmQvRhRKjCPy-Trp&ust=1638198741864000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKCtoIOsu_QCFQAAAAAdAAAAABAD"
+    }
+  ]
+}
