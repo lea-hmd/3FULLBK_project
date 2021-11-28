@@ -26,6 +26,9 @@ module.exports = (app) => {
   //Route de la requête de modification d'un partenaire via son id
   router.put("/partenaires/updateById/:id", partenaires.updateById);
 
+  //Route de la requête de modification d'un partenaire via son nom
+  router.put("/partenaires/updateByName/:name", partenaires.updateByName);
+
   /*------------ SUPPRESSION ------------*/
 
   //Route de la requête de suppression de tous les partenaires

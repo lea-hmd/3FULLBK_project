@@ -109,7 +109,7 @@ exports.getEntreprises = (req, res) => {
 
 /*------------ MODIFICATION ------------*/
 
-//Modification d'un partenaire
+//Modification d'un partenaire via son id
 exports.updateById = (req, res) => {
   if (!req.body) {
     return res.status(400).send("Cannot update partenaire with empty body");
@@ -133,6 +133,35 @@ exports.updateById = (req, res) => {
         .send(
           "Error while updating partenaire with the following id: " +
             id +
+            ", please check if there is no identical data in the database !"
+        );
+    });
+};
+
+//Modification d'un partenaire via son nom
+exports.updateByName = (req, res) => {
+  if (!req.body) {
+    return res.status(400).send("Cannot update partenaire with empty body");
+  }
+
+  const name = req.params.name;
+
+  Partenaire.findOneAndUpdate(name, req.body)
+    .then((data) => {
+      if (!data) {
+        res
+          .status(404)
+          .send(
+            `Cannot update partenaire with name: ${name}, you must verify the name !`
+          );
+      } else res.send("Partenaire was successfully updated.");
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send(
+          "Error while updating partenaire with the following name: " +
+            name +
             ", please check if there is no identical data in the database !"
         );
     });
