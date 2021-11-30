@@ -6,12 +6,6 @@ const Financement = db.financements;
 
 //Ajout d'une nouvelle donnée de la page financement
 exports.createOne = (req, res) => {
-  //Empêche l'envoi de requêtes avec un champ vide
-  if (!req.body.title) {
-    res.status(400).send("Cannot send an empty field !");
-    return;
-  }
-
   //Création d'un nouvel objet financement
   const financement = new Financement({
     title: req.body.title,
