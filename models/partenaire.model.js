@@ -8,6 +8,7 @@ module.exports = (mongoose) => {
         isCampus: { type: Boolean, required: true },
         isEntreprise: { type: Boolean, required: true },
         imageUrl: { type: String, required: true },
+        userId: { type: String, required: true },
       },
       { timestamps: true }
     )

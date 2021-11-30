@@ -8,6 +8,7 @@ module.exports = (mongoose) => {
         title: { type: String, unique: true, required: true },
         description: String,
         imageUrl: String,
+        userId: { type: String, required: true },
       },
       { timestamps: true }
     )
