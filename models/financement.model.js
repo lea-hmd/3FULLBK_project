@@ -4,8 +4,9 @@ module.exports = (mongoose) => {
     "financement", //Nom de la collection
     mongoose.Schema(
       {
-        title: { type: String, unique: true },
+        title: { type: String, unique: true, required: true },
         description: String,
+        userId: { type: String, required: true },
       },
       { timestamps: true }
     )
