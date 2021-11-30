@@ -4,10 +4,10 @@ module.exports = (mongoose) => {
     "campus_entreprise", //Nom de la collection
     mongoose.Schema(
       {
-        name: { type: String, unique: true },
-        isCampus: Boolean,
-        isEntreprise: Boolean,
-        imageUrl: String,
+        name: { type: String, unique: true, required: true },
+        isCampus: { type: Boolean, required: true },
+        isEntreprise: { type: Boolean, required: true },
+        imageUrl: { type: String, required: true },
       },
       { timestamps: true }
     )
