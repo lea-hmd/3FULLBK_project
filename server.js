@@ -44,6 +44,7 @@ app.get("/", (req, res) => {
 //Importation des routes des requêtes
 require("./routes/partenaires.routes")(app);
 require("./routes/certificationsPro.routes")(app);
+require("./routes/financements.routes")(app);
 
 //Création du serveur web et écoute des requêtes
 const PORT = process.env.PORT || 8080;
