@@ -4,8 +4,8 @@ module.exports = (mongoose) => {
     "certifications_professionnelle", //Nom de la collection
     mongoose.Schema(
       {
-        providerName: String,
-        title: { type: String, unique: true },
+        providerName: { type: String, required: true },
+        title: { type: String, unique: true, required: true },
         description: String,
         imageUrl: String,
       },
