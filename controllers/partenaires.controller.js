@@ -16,12 +16,12 @@ exports.createOne = (req, res) => {
     return;
   }
 
+  delete req.body._id;
   //Création d'un nouvel objet Partenaire
   const partenaire = new Partenaire({
-    name: req.body.name,
+    ...req.body,
     isCampus: req.body.isCampus ? req.body.isCampus : false,
     isEntreprise: req.body.isEntreprise ? req.body.isEntreprise : false,
-    imageUrl: req.body.imageUrl,
   });
 
   //Enregistrement du partenaire dans la bdd

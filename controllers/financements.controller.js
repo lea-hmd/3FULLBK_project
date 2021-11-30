@@ -6,10 +6,10 @@ const Financement = db.financements;
 
 //Ajout d'une nouvelle donnée de la page financement
 exports.createOne = (req, res) => {
+  delete req.body._id;
   //Création d'un nouvel objet financement
   const financement = new Financement({
-    title: req.body.title,
-    description: req.body.description,
+    ...req.body,
   });
 
   //Enregistrement d'une nouvelle donnée de la page financement dans la bdd
