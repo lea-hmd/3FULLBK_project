@@ -8,7 +8,7 @@ var corsOptions = {
   origin: "http://localhost:3000",
 };
 
-//Prise en charge du protocole Cx   ORS
+//Prise en charge du protocole CORS
 app.use(cors(corsOptions));
 
 // Parse et 'traite' le contenu des requêtes de type application/json
@@ -16,6 +16,29 @@ app.use(express.json());
 
 // Parse et 'traite' le contenu des requêtes de type application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+//Met en place les header et la validation du token
+app.use(async (req, res, next) => {
+  if (req.headers["x-access-token"]) {
+    const accessToken = req.headers["x-access-token"];
+    const { userId, exp } = await jwt.verify(
+      accessToken,
+      process.env.JWT_SECRET
+    );
+    //Vérifie si le token est expiré
+    if (exp < Date.now().valueOf() / 1000) {
+      return res
+        .status(401)
+        .json({
+          error: "JWT token has expired, please login to obtain a new one",
+        });
+    }
+    res.locals.loggedInUser = await User.findById(userId);
+    next();
+  } else {
+    next();
+  }
+});
 
 //Connexion à la bdd
 const db = require("./models");
