@@ -3,12 +3,16 @@ module.exports = (mongoose) => {
   const uniqueValidator = require("mongoose-unique-validator");
   const userSchema = mongoose.Schema(
     {
-      firstName: String,
-      lastName: String,
+      firstName: { type: String, required: true },
+      lastName: { type: String, required: true },
       email: { type: String, unique: true, required: true },
       password: { type: String, required: true },
-      isAdmin: Boolean,
-      isContentManager: Boolean,
+      role: {
+        type: Boolean,
+        default: "contentManager",
+        enum: ["contentManager", "admin"],
+      },
+      accessToken: String,
     },
     { timestamps: true }
   );
