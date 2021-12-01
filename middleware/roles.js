@@ -8,8 +8,7 @@ exports.roles = (function () {
     .readAny("content")
     .updateAny("content")
     .deleteAny("content")
-    .readOwn("user")
-    .updateOwn("user");
+    .readOwn("user");
 
   ac.grant("admin")
     .extend("contentManager")
