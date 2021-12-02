@@ -1,3 +1,4 @@
+//Importation des modules utilisés
 const config = require("../config/auth.config");
 const db = require("../models");
 const User = db.users;
@@ -12,7 +13,7 @@ exports.signup = (req, res) => {
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 10),
   });
-
+  //Enregistrement dans la bdd
   user.save((err, user) => {
     if (err) {
       res.status(500).send(err.message);
@@ -39,6 +40,7 @@ exports.signup = (req, res) => {
         }
       );
     } else {
+      //Si un rôle n'est pas spécifié il sera par défaut un contentManager (gestionnaire de plateforme)
       Role.findOne({ name: "contentManager" }, (err, role) => {
         if (err) {
           res.status(500).send(err.message);
@@ -84,7 +86,7 @@ exports.signin = (req, res) => {
           message: "Invalid password !",
         });
       }
-
+      //Création d'un token d'authentification
       var token = jwt.sign({ id: user.id }, config.secret, {
         expiresIn: "24h",
       });
@@ -92,7 +94,7 @@ exports.signin = (req, res) => {
       var authorities = [];
 
       for (let i = 0; i < user.roles.length; i++) {
-        authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
+        authorities.push("ROLE : " + user.roles[i].name.toUpperCase());
       }
       res.status(200).send({
         id: user._id,
