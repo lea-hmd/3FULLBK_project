@@ -6,15 +6,16 @@ const User = db.users;
 const Role = db.roles;
 
 //Vérification de validité du token d'authentification
-verifyToken = (req, res, next) => {
+exports.verifyToken = (req, res, next) => {
+  //Définition de l'en-tête recevant le token
   let token = req.headers["x-access-token"];
-
   if (!token) {
     return res.status(403).send("No token provided !");
   }
+  //Décodage du token pour en récupérer ses informations
   jwt.verify(token, config.secret, (err, decoded) => {
     if (err) {
-      return res.status(401).send("Unauthorized !");
+      return res.status(401).send("Unauthorized ! Token is invalid !");
     }
     req.userId = decoded.id;
     next();
@@ -22,7 +23,7 @@ verifyToken = (req, res, next) => {
 };
 
 //Vérification du rôle d'administrateur
-isAdmin = (req, res, next) => {
+exports.isAdmin = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
       res.status(500).send(err.message);
@@ -51,7 +52,7 @@ isAdmin = (req, res, next) => {
 };
 
 //Vérification du rôle de gestionnaire de plateforme
-isContentManager = (req, res, next) => {
+exports.isContentManager = (req, res, next) => {
   User.findById(req.userId).exec((err, user) => {
     if (err) {
       res.status(500).send(err.message);
@@ -78,10 +79,3 @@ isContentManager = (req, res, next) => {
     );
   });
 };
-
-const authJwt = {
-  verifyToken,
-  isAdmin,
-  isContentManager,
-};
-module.exports = authJwt;
