@@ -17,31 +17,10 @@ app.use(express.json());
 // Parse et 'traite' le contenu des requêtes de type application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-//Met en place les header et la validation du token
-app.use(async (req, res, next) => {
-  if (req.headers["x-access-token"]) {
-    const accessToken = req.headers["x-access-token"];
-    const { userId, exp } = await jwt.verify(
-      accessToken,
-      process.env.JWT_SECRET
-    );
-    //Vérifie si le token est expiré
-    if (exp < Date.now().valueOf() / 1000) {
-      return res
-        .status(401)
-        .json({
-          error: "JWT token has expired, please login to obtain a new one",
-        });
-    }
-    res.locals.loggedInUser = await User.findById(userId);
-    next();
-  } else {
-    next();
-  }
-});
-
 //Connexion à la bdd
 const db = require("./models");
+const Role = db.roles;
+
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -54,6 +33,30 @@ db.mongoose
     console.log("Cannot connect to the db !", err);
     process.exit();
   });
+
+function initial() {
+  Role.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
+      new Role({
+        name: "contentManager",
+      }).save((err) => {
+        if (err) {
+          console.log("error", err);
+        }
+        console.log("Added 'contentManager' to roles collection");
+      });
+
+      new Role({
+        name: "admin",
+      }).save((err) => {
+        if (err) {
+          console.log("error", err);
+        }
+        console.log("Added 'admin' to roles collection");
+      });
+    }
+  });
+}
 
 //Route principale du site
 app.get("/", (req, res) => {
