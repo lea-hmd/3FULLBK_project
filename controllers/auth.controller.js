@@ -1,10 +1,10 @@
 //Importation des modules utilisés
-const config = require("../config/auth.config");
-const db = require("../models");
+const config = require('../config/auth.config');
+const db = require('../models');
 const User = db.users;
 const Role = db.roles;
-var jwt = require("jsonwebtoken");
-var bcrypt = require("bcryptjs");
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs');
 
 //Création d'un utilisateur
 exports.signup = (req, res) => {
@@ -35,13 +35,13 @@ exports.signup = (req, res) => {
               res.status(500).send(err.message);
               return;
             }
-            res.send({ message: "User was successfully registered !" });
+            res.send({ message: 'User was successfully registered !' });
           });
         }
       );
     } else {
       //Si un rôle n'est pas spécifié il sera par défaut un contentManager (gestionnaire de plateforme)
-      Role.findOne({ name: "contentManager" }, (err, role) => {
+      Role.findOne({ name: 'contentManager' }, (err, role) => {
         if (err) {
           res.status(500).send(err.message);
           return;
@@ -52,7 +52,7 @@ exports.signup = (req, res) => {
             res.status(500).send(err.message);
             return;
           }
-          res.send({ message: "User was successfully registered !" });
+          res.send({ message: 'User was successfully registered !' });
         });
       });
     }
@@ -64,7 +64,7 @@ exports.signin = (req, res) => {
   User.findOne({
     username: req.body.username,
   })
-    .populate("roles", "-__v")
+    .populate('roles', '-__v')
     .exec((err, user) => {
       if (err) {
         res.status(500).send(err.message);
@@ -73,7 +73,7 @@ exports.signin = (req, res) => {
       if (!user) {
         return res
           .status(404)
-          .send("User not found, please verify the informations !");
+          .send('User not found, please verify the informations !');
       }
       var passwordIsValid = bcrypt.compareSync(
         req.body.password,
@@ -83,18 +83,18 @@ exports.signin = (req, res) => {
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
-          message: "Invalid password !",
+          message: 'Invalid password !',
         });
       }
       //Création d'un token d'authentification
       var token = jwt.sign({ id: user.id }, config.secret, {
-        expiresIn: "24h",
+        expiresIn: '1h',
       });
 
       var authorities = [];
 
       for (let i = 0; i < user.roles.length; i++) {
-        authorities.push("ROLE : " + user.roles[i].name.toUpperCase());
+        authorities.push('ROLE : ' + user.roles[i].name.toUpperCase());
       }
       res.status(200).send({
         id: user._id,

@@ -15,7 +15,11 @@ exports.verifyToken = (req, res, next) => {
   //Décodage du token pour en récupérer ses informations
   jwt.verify(token, config.secret, (err, decoded) => {
     if (err) {
-      return res.status(401).send('Unauthorized ! Token is invalid !');
+      return res
+        .status(401)
+        .send(
+          'Unauthorized ! Token is invalid or expired, please check the integrity of the token or re login.'
+        );
     }
     req.userId = decoded.id;
     next();
