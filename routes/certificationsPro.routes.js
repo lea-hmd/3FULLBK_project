@@ -8,14 +8,14 @@ module.exports = (app) => {
   //Route de la requête d'ajout d'une nouvelle certification
   router.post(
     '/certifications-pro/addOne',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     certificationsPro.createOne
   );
 
   //Route de la requête d'ajout de plusieurs certifications
   router.post(
     '/certifications-pro/addMany',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     certificationsPro.createMany
   );
 
@@ -35,7 +35,7 @@ module.exports = (app) => {
   //Route de la requête de modification d'une certification via son id
   router.put(
     '/certifications-pro/updateById/:id',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     certificationsPro.updateById
   );
 
@@ -44,14 +44,14 @@ module.exports = (app) => {
   //Route de la requête de suppression de toutes les certifications
   router.delete(
     '/certifications-pro/deleteAll',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     certificationsPro.deleteAll
   );
 
   //Route de la requête de suppression d'une certification en fonction de son id
   router.delete(
     '/certifications-pro/deleteById/:id',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     certificationsPro.deleteById
   );
 

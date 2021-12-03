@@ -8,14 +8,14 @@ module.exports = (app) => {
   //Route de la requête de création d'un nouveau partenaire
   router.post(
     '/partenaires/addOne',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.createOne
   );
 
   //Route de la requête de création de plusieurs partenaires
   router.post(
     '/partenaires/addMany',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.createMany
   );
 
@@ -35,14 +35,14 @@ module.exports = (app) => {
   //Route de la requête de modification d'un partenaire via son id
   router.put(
     '/partenaires/updateById/:id',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.updateById
   );
 
   //Route de la requête de modification d'un partenaire via son nom
   router.put(
     '/partenaires/updateByName/:name',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.updateByName
   );
 
@@ -51,21 +51,21 @@ module.exports = (app) => {
   //Route de la requête de suppression de tous les partenaires
   router.delete(
     '/partenaires/deleteAll',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.deleteAll
   );
 
   //Route de la requête de suppression d'un partenaire en fonction de son nom
   router.delete(
     '/partenaires/deleteByName/:name',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.deleteByName
   );
 
   //Route de la requête de suppression d'un partenaire en fonction de son id
   router.delete(
     '/partenaires/deleteById/:id',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     partenaires.deleteById
   );
 

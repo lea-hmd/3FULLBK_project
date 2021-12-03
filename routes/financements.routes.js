@@ -8,14 +8,14 @@ module.exports = (app) => {
   //Route de la requête d'ajout d'une nouvelle donnée de la page financement
   router.post(
     '/financements/addOne',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     financements.createOne
   );
 
   //Route de la requête d'ajout de nouvelles données de la page financement
   router.post(
     '/financements/addMany',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     financements.createMany
   );
 
@@ -32,7 +32,7 @@ module.exports = (app) => {
   //Route de la requête de modification d'une donnée de la page financement en fonction de son id
   router.put(
     '/financements/updateById/:id',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     financements.updateById
   );
 
@@ -41,14 +41,14 @@ module.exports = (app) => {
   //Route de la requête de suppression de toutes les données de la page financement
   router.delete(
     '/financements/deleteAll',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     financements.deleteAll
   );
 
   //Route de la requête de suppression d'une donnée de la page financement en fonction de son id
   router.delete(
     '/financements/deleteById/:id',
-    [authJwt.verifyToken, authJwt.isAdmin, authJwt.isContentManager],
+    [authJwt.verifyToken, authJwt.isRole],
     financements.deleteById
   );
 
