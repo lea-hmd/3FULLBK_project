@@ -6,18 +6,10 @@ const CertificationPro = db.certificationsPro;
 
 //Ajout d'une nouvelle certification
 exports.createOne = (req, res) => {
-  //Empêche l'envoi de requêtes avec un champ vide
-  if (!req.body.title || !req.body.providerName) {
-    res.status(400).send("Cannot send an empty field !");
-    return;
-  }
-
+  delete req.body._id;
   //Création d'un nouvel objet Certification
   const certification = new CertificationPro({
-    providerName: req.body.providerName,
-    title: req.body.title,
-    description: req.body.description,
-    imageUrl: req.body.imageUrl,
+    ...req.body,
   });
 
   //Enregistrement d'une certification dans la bdd

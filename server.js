@@ -4,11 +4,10 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 
+//Prise en charge du protocole CORS
 var corsOptions = {
   origin: "http://localhost:3000",
 };
-
-//Prise en charge du protocole Cx   ORS
 app.use(cors(corsOptions));
 
 // Parse et 'traite' le contenu des requêtes de type application/json
@@ -19,6 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 
 //Connexion à la bdd
 const db = require("./models");
+const Role = db.roles;
+
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -26,11 +27,37 @@ db.mongoose
   })
   .then(() => {
     console.log("Successful connection to the db !");
+    initial();
   })
   .catch((err) => {
     console.log("Cannot connect to the db !", err);
     process.exit();
   });
+
+//Ajout des rôles à la bdd
+function initial() {
+  Role.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
+      new Role({
+        name: "contentManager",
+      }).save((err) => {
+        if (err) {
+          console.log("error", err);
+        }
+        console.log("Added 'contentManager' to roles collection");
+      });
+
+      new Role({
+        name: "admin",
+      }).save((err) => {
+        if (err) {
+          console.log("error", err);
+        }
+        console.log("Added 'admin' to roles collection");
+      });
+    }
+  });
+}
 
 //Route principale du site
 app.get("/", (req, res) => {
@@ -45,6 +72,8 @@ app.get("/", (req, res) => {
 require("./routes/partenaires.routes")(app);
 require("./routes/certificationsPro.routes")(app);
 require("./routes/financements.routes")(app);
+require("./routes/users.routes")(app);
+require("./routes/auth.routes")(app);
 
 //Création du serveur web et écoute des requêtes
 const PORT = process.env.PORT || 8080;
