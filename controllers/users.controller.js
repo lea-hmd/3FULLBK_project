@@ -1,6 +1,7 @@
 //Importation des modules utilisés
 const db = require("../models");
 const User = db.users;
+var bcrypt = require("bcryptjs");
 
 /*------------ AFFICHAGE ------------*/
 
@@ -45,6 +46,7 @@ exports.updateById = (req, res) => {
   }
 
   const id = req.params.id;
+  req.body.password = bcrypt.hashSync(req.body.password, 10);
 
   User.findByIdAndUpdate(id, req.body)
     .then((data) => {
