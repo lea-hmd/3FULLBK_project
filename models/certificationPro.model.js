@@ -1,7 +1,7 @@
 //Création du modèle et de son schéma de données
 module.exports = (mongoose) => {
   const CertificationPro = mongoose.model(
-    'certifications_professionnelle', //Nom de la collection
+    "certifications_professionnelle", //Nom de la collection
     mongoose.Schema(
       {
         providerName: { type: String, required: true },
