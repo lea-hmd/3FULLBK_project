@@ -15,6 +15,7 @@ db.certificationsPro = require("./certificationPro.model")(mongoose);
 db.financements = require("./financement.model")(mongoose);
 db.contactEntreprises = require("./contactEntreprise.model")(mongoose);
 db.contactEtudiants = require("./contactEtudiant.model")(mongoose);
+db.alternanceStages = require("./alternanceStage.model")(mongoose);
 db.users = require("./user.model")(mongoose);
 db.roles = require("./role.model")(mongoose);
 
