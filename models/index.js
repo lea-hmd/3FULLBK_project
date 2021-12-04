@@ -13,6 +13,7 @@ db.url = dbUrl;
 db.partenaires = require("./partenaire.model.js")(mongoose);
 db.certificationsPro = require("./certificationPro.model")(mongoose);
 db.financements = require("./financement.model")(mongoose);
+db.contactEntreprises = require("./contactEntreprise.model")(mongoose);
 db.users = require("./user.model")(mongoose);
 db.roles = require("./role.model")(mongoose);
 
