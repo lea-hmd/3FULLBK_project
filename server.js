@@ -74,6 +74,7 @@ require("./routes/certificationsPro.routes")(app);
 require("./routes/financements.routes")(app);
 require("./routes/contactEntreprises.routes")(app);
 require("./routes/contactEtudiants.routes")(app);
+require("./routes/alternanceStages.routes")(app);
 require("./routes/users.routes")(app);
 require("./routes/auth.routes")(app);
 
