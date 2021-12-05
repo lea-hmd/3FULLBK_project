@@ -17,6 +17,7 @@ db.contactEntreprises = require("./contactEntreprise.model")(mongoose);
 db.contactEtudiants = require("./contactEtudiant.model")(mongoose);
 db.alternanceStages = require("./alternanceStage.model")(mongoose);
 db.blocCompetences = require("./blocCompetence.model")(mongoose);
+db.programmes = require("./programme.model")(mongoose);
 db.users = require("./user.model")(mongoose);
 db.roles = require("./role.model")(mongoose);
 
