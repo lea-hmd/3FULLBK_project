@@ -25,7 +25,7 @@ module.exports = (app) => {
   router.get("/programmes/all", programmes.getAll);
 
   //Route de la requête d'affichage des données de la page programmes en fonction du titre de leur compétences
-  router.get("/programmes/:grade", programmes.getBySkills);
+  router.get("/programmes/:grade", programmes.getByGrade);
 
   /*------------ MODIFICATION ------------*/
 

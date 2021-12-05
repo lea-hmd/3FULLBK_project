@@ -6,27 +6,52 @@ module.exports = (mongoose) => {
       {
         grade: { type: String, unique: true, required: true },
         skillGoal: String,
-        systemNetworkCloud: [
+        TECH1: [
           {
             type: String,
           },
         ],
-        data: [
+        TECH2: [
           {
             type: String,
           },
         ],
-        softwareDevDesign: [
+        SOFT1: [
           {
             type: String,
           },
         ],
-        personalSkills: [
+        SOFT2: [
           {
             type: String,
           },
         ],
-        profesionnalSkills: [
+        PRO: [
+          {
+            type: String,
+          },
+        ],
+        DATASOFT: [
+          {
+            type: String,
+          },
+        ],
+        SPEDAD: [
+          {
+            type: String,
+          },
+        ],
+        SPECCSN: [
+          {
+            type: String,
+          },
+        ],
+        SPEBDAI: [
+          {
+            type: String,
+          },
+        ],
+        SPEWMD: [
           {
             type: String,
           },
